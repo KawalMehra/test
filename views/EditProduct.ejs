@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MultiShop - Online Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <% data.forEach(function(val,key){
+    Name = val.Name;
+    var Namev = Name
+    ProductType = val.ProductType;
+    Price = val.price;
+    Quantity = val.Quantity;
+    id = val.RecordID; %>
+  <% })%>
+
+    <!-- Cart Start -->
+    <div class="row">
+        <div class="col-md-12" style="margin-left:41.6%;">
+             <h2>Products Table</h2>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row px-xl-5 offset-2">
+            <div class="col-lg-8 table-responsive mb-5">
+                   <form action="UpdateProduct" method="post">
+                    <input type="hidden" name="RecordID" value="<%= id%>">
+                      <div class="row">
+                          <div class="col-md-3" style="padding-top: 5px;">
+                              <label class="form-label">Product</label>
+                          </div>
+                          <div class="col-md-8">
+                               <input type="text" class="form-control" value="<%= Name%>"  placeholder="Product Name" name="Name">
+                          </div>
+                      </div><br>
+                    <div class="row">
+                        <div class="col-md-3" style="padding-top: 5px;">
+                             <label class="control-label">Product Type</label>
+                        </div>
+                                <div class="col-md-8">
+                                    <div class="input-icon right">
+                                        <select class="form-control" data-placeholder="Choose Product Type" name="ProductType" id="ProductID" tabindex="1">
+                                             <option>**Please Select**</option>
+                                             <option>Electronics</option>
+                                             <option>Groceries</option>
+                                             <option>Blezers</option>
+                                             <option>Jackets</option>
+                                             <option>Pents</option>
+                                             <option>Shoes</option>
+                                             <option>Shirts</option>
+                                        </select>
+                                    </div>
+                              </div>
+                         </div><br>
+                     <div class="row">
+                          <div class="col-md-3" style="padding-top: 5px;">
+                              <label class="form-label">Quantity</label>
+                          </div>
+                          <div class="col-md-8">
+                               <input type="number" class="form-control" value="<%= Quantity%>" placeholder="Product Quantity" name="Quantity">
+                          </div>
+                      </div><br>
+                     <div class="row">
+                          <div class="col-md-3" style="padding-top: 5px;">
+                              <label class="form-label">Price</label>
+                          </div>
+                          <div class="col-md-8">
+                               <input type="number" class="form-control" value="<%= Price%>" placeholder="Product Price" name="Price">
+                          </div>
+                      </div><br>
+                      <div class="row" >
+                          <div class="col-md-3" style="padding-top: 5px;">
+                              <label class="form-label">Image</label>
+                          </div>
+                          <div class="col-md-8">
+                               <input type="file" class="form-control" placeholder="Product Image" name="image">
+                          </div>
+                      </div><br>
+                      <input type="submit" class="btn btn-danger" value="Submit">
+                      </div>
+                   </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+
+  alert(Namev)
+  
+</script>
+
+</html>
